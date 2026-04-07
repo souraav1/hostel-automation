@@ -3,7 +3,7 @@ import axios from 'axios'; // Or your preferred API client
 
 // Create an axios instance for your API
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Make sure this matches your backend server address
+  baseURL: import.meta.env.VITE_API_URL || '/api', // Proxy in dev, rewrite in prod
 });
 
 const AuthContext = createContext(null);
